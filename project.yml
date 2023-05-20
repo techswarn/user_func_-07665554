@@ -1,24 +1,22 @@
 parameters: {}
-environment: 
-  DB_HOST : "${DATABASE_URL}"
-  DB_PORT : "${DATABASE_PORT}"
-  DB_USER : "${DATABASE_USER}"
-  DB_PASS : "${DATABASE_PASSWORD}"
-  DB_NAME : "${DATABASE_NAME}"
 packages:
-    - name: slack_observers
-      environment:
-        ASANA_TOKEN : "${ASANA_TOKEN}"
-        ASANA_ORG : "${ASANA_ORG}"
-        SLACK_BOT_TOKEN : "${SLACK_BOT_TOKEN}"
-        SLACK_SEC_TOKEN : "${SLACK_SEC_TOKEN}"
-        SLACK_SIGN : "${SLACK_SIGN}"
-        BOT_CHANNEl_SLACK : "${BOT_CHANNEl_SLACK}"
-        SLACK_TEAM_ID: "${SLACK_TEAM_ID}"
-        SLACK_API_APP_ID: "${SLACK_API_APP_ID}"
-      functions:
-        - name: slack_asana
-          runtime: python:default
-        - name: base_observer
-          runtime: python:default
-    
+  - name: slack_observers
+    environment:
+      ASANA_TOKEN: "${ASANA_TOKEN}"
+      ASANA_ORG: "${ASANA_ORG}"
+      SLACK_BOT_TOKEN: "${SLACK_BOT_TOKEN}"
+      SLACK_SEC_TOKEN: "${SLACK_SEC_TOKEN}"
+      SLACK_SIGN: "${SLACK_SIGN}"
+      BOT_CHANNEl_SLACK: "${BOT_CHANNEl_SLACK}"
+      SLACK_TEAM_ID: "${SLACK_TEAM_ID}"
+      SLACK_API_APP_ID: "${SLACK_API_APP_ID}"
+      DB_HOST: "${DATABASE_URL}"
+      DB_PORT: "${DATABASE_PORT}"
+      DB_USER: "${DATABASE_USER}"
+      DB_PASS: "${DATABASE_PASSWORD}"
+      DB_NAME: "${DATABASE_NAME}"
+    functions:
+      - name: slack_asana
+        runtime: python:default
+      - name: base_observer
+        runtime: python:default
