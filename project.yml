@@ -10,11 +10,11 @@ packages:
       BOT_CHANNEl_SLACK: "${BOT_CHANNEl_SLACK}"
       SLACK_TEAM_ID: "${SLACK_TEAM_ID}"
       SLACK_API_APP_ID: "${SLACK_API_APP_ID}"
-      DB_HOST: "${DATABASE_URL}"
-      DB_PORT: "${DATABASE_PORT}"
-      DB_USER: "${DATABASE_USER}"
-      DB_PASS: "${DATABASE_PASSWORD}"
-      DB_NAME: "${DATABASE_NAME}"
+      DB_HOST: "${DB_HOST}"
+      DB_PORT: "${DB_HOST}"
+      DB_USER: "${DB_HOST}"
+      DB_PASS: "${DB_HOST}"
+      DB_NAME: "${DB_HOST}"
     functions:
       - name: slack_asana
         runtime: python:default
